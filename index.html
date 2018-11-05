@@ -5,28 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Include jQuery Mobile stylesheets -->
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+    <script language="javascript" type="text/javascript" src="JS/function.js"></script>
+    <script language="javascript" type="text/javascript" src="JS/function.js"></script>
     <!-- Include the jQuery library -->
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"></script>
     <!-- Include the jQuery Mobile library -->
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
 
 <div data-role="page" id="pageone">
-    <div data-role="header">
+    <div data-role="header" id="header">
         <h1>my First jQueryMobile Page</h1>
     </div>
 
     <div data-role="main" class="ui-content">
-        <p>Hello World!</p>
-        <a href="#pagetwo">Page #2</a>
+        <h1>This is a story</h1>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+        <a class="ui-btn" id="ausblenden">Text ausblenden</a>
 
-        <button class="ui-btn">SampleButton</button>
+        <a href="#pagetwo" data-transition="slide">weiterlesen</a><br></br>
 
-        <a href="#pagetwo" class="ui-btn">SampleButtonGotoPage2</a>
+
+        <div class="ui-grid-a">
+            <div class="ui-block-a" id="blocks"><h1>Story</h1>Lorem Ipsum is...</div>
+            <div class="ui-block-b" id="blocks"><h1>Story</h1>It has survived...</div>
+        </div><!-- /grid-a -->
+
     </div>
 
-    <div data-role="footer">
+    <div data-role="footer" id="footer">
         <h1>Footer text</h1>
     </div>
 </div>
@@ -34,11 +45,31 @@
 
 <div data-role="page" id="pagetwo">
     <div data-role="header">
-        <h1>Hello World again!</h1>
+        <h1>details</h1>
     </div>
 
     <div data-role="main" class="ui-content">
-        <p>Page #2</p>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script>
+                $(document).ready(function(){
+                    $("button").click(function(){
+                        $("#div1").fadeIn("slow");
+                        /*$("#div2").fadeIn("slow");
+                        $("#div3").fadeIn(3000);*/
+                    });
+                });
+        </script>
+
+        <button>Click to fade in boxes</button><br>
+        <div id="div1" style="width:100%;height:100%;display:none;">
+                <img src="image_red.jpg" style="width:30%;max-width:30%" id="bild1">
+                <img src="image_red.jpg" style="width:30%;max-width:30%" id="bild1">
+                <img src="image_red.jpg" style="width:30%;max-width:30%" id="bild1">
+        </div>
+
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
         <a href="#pageone">Back...</a>
     </div>
 
@@ -47,8 +78,24 @@
     </div>
 </div>
 
+<script type="text/javascript">
+    var status = 1;
 
+    $("#ausblenden").click(function(){
+        $("p").toggle();
+
+        if(status == 1){
+            $('#ausblenden').html('Text einblenden');
+            status = 0;
+        }
+        else if(status == 0){
+            $('#ausblenden').html('Text ausblenden');
+            status = 1;
+        }
+    });
+</script>
 
 </body>
 </html>
+
 

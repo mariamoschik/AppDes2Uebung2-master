@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+#pageone{
+	background-color: #fff !important;
+
+}
+
+#header {
+	background-color: red;
+	color: #fff;
+	border-color:none;
+}
+
+#header h1{
+		text-align: left;
+		margin-left:10px;
+}
+
+#blocks{
+	max-width:45%;
+	background-color: #808080 !important;
+	color: #fff;
+	text-decoration: none !important;
+	padding: 15px;
+	margin: 5px;
+}
+
+#div1 {
+	position: center !important;
+	padding: 10px;
+}
+
+#div2 {
+}
+
+#div3 {
+}
+
+p {
+	font-size: 20px;	
+}
